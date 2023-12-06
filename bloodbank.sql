@@ -3,15 +3,16 @@ CREATE DATABASE IF NOT EXISTS blood_bank_db;
 USE blood_bank_db;
 
 -- Table: doctor
-CREATE TABLE IF NOT EXISTS doctor (
-    doctor_id INT AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE doctor (
+    doctor_id INT PRIMARY KEY,
     doctor_name VARCHAR(100),
-    doctor_addr VARCHAR(100),
+    doctor_hospital VARCHAR(100),
     doctor_phno INT
 );
+INSERT INTO  doctor VALUES (1,'Ann','abc hospital','9723752953');
 
 -- Table: donor
-CREATE TABLE IF NOT EXISTS donor (
+CREATE TABLE donor (
     donor_id INT AUTO_INCREMENT PRIMARY KEY,
     donor_name VARCHAR(100),
     donor_addr VARCHAR(100),
@@ -27,14 +28,14 @@ CREATE TABLE IF NOT EXISTS donor (
 );
 
 -- Table: blood_bank
-CREATE TABLE IF NOT EXISTS blood_bank (
+CREATE TABLE blood_bank (
     bank_id INT AUTO_INCREMENT PRIMARY KEY,
     bank_name VARCHAR(100),
     bank_addr VARCHAR(100)
 );
 
 -- Table: blood_availability
-CREATE TABLE IF NOT EXISTS blood_availability (
+CREATE TABLE blood_availability (
     donor_id INT,
     blood_type VARCHAR(5),
     amount VARCHAR(100),
@@ -43,7 +44,7 @@ CREATE TABLE IF NOT EXISTS blood_availability (
 );
 
 -- Table: patient
-CREATE TABLE IF NOT EXISTS patient (
+CREATE TABLE patient (
     patient_id INT AUTO_INCREMENT PRIMARY KEY,
     patient_name VARCHAR(100),
     blood_type VARCHAR(5),
